@@ -178,7 +178,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let user of listOfUsers | paginate: { itemsPerPage: 5, currentPage: p }">
+                                            <tr
+                                                *ngFor="let user of listOfUsers | paginate: { itemsPerPage: 5, currentPage: p }">
                                                 <td class="py-1">
                                                     <img src="assets/images/faces/{{user.nameImg}}" alt="image" />
                                                 </td>
@@ -188,8 +189,8 @@
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar {{user.bg}}" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="{{user.valuenow}" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
+                                                            style="width: 50%" aria-valuenow="{{user.valuenow}"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </td>
                                                 <td>
