@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserComponent } from './users/user.component';
-// import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatPaginatorModule } from '@angular/material/paginator';
-// import { MatTableModule } from '@angular/material/table'  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +19,9 @@ import { UserComponent } from './users/user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NoopAnimationsModule,
-    // MatPaginatorModule,
-    // MatTableModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,26 +7,18 @@ import { Router } from '@angular/router';
     styleUrls: ['./user.component.css']
 })
 
+export class UserComponent implements OnInit {
 
+    constructor(
+        private router: Router
+    ) {
 
-
-
-export class UserComponent implements AfterViewInit{
-
-    constructor(private router: Router) { 
-        
     }
-    
-    // displayedColumns: string[] = ['name', 'amount', 'deadline'];
-    // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-    // // @ViewChild(MatPaginator) paginator: MatPaginator;
-
-    ngAfterViewInit() {
-        // this.dataSource.paginator = this.paginator;
-      }
-
-    // ngOnInit() {}
-
-    
+    ngOnInit() {
+        // redirect to list of users if already logged in
+        if (!localStorage.getItem('userToken')) {
+            this.router.navigate(['/login']);
+        }
+    }
 };
